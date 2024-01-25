@@ -98,8 +98,8 @@ Document revision history.
 1.1 - Identification
 ~~~~~~~~~~~~~~~~~~~~
 
-This document is the Draft Software Version Description (see revision table) for the
-End-user Management Component of the Advanced ACME Web Services Appliance,
+This document is the Draft Software Version Description (see revision table)
+for the End-user Management Component of the Advanced ACME Web Services Appliance,
 Engineering Evaluation Unit.
 
 
@@ -108,8 +108,8 @@ Engineering Evaluation Unit.
 
 The Advanced ACME Web Services Appliance is an on-premise virtual Web Services
 cluster with an advanced management interface.  This document provides both the
-Version Description and Installation steps for the Management Console only.  The ACME
-Web Service high-level system components are shown in Figure 1 below:
+Version Description and Installation steps for the Management Console only. The
+ACME Web Service high-level system components are shown in Figure 1 below:
 
 .. figure:: images/advanced_acme_web_service.png
    :width: 90%
@@ -169,10 +169,18 @@ analytics from Spark.
 4.0 General information
 =======================
 
-This section shall contain any general information that aids in understanding this document (e.g., background information, glossary, rationale). This section shall include an alphabetical listing of all acronyms, abbreviations, and their meanings as used in this document and a list of any terms and definitions needed to understand this document.
+This section shall contain any general information that aids in understanding
+this document (e.g., background information, glossary, rationale). This section
+shall include an alphabetical listing of all acronyms, abbreviations, and their
+meanings as used in this document and a list of any terms and definitions needed
+to understand this document.
 
 A. Appendixes
 =============
 
-Appendixes may be used to provide information published separately for convenience in document maintenance (e.g., charts, classified data). As applicable, each appendix shall be referenced in the main body of the document where the data would normally have been provided. Appendixes may be bound as separate documents for ease in handling. Appendixes shall be lettered alphabetically (A, B, etc.).
-
+Appendixes may be used to provide information published separately for
+convenience in document maintenance (e.g., charts, classified data). As
+applicable, each appendix shall be referenced in the main body of the document
+where the data would normally have been provided. Appendixes may be bound as
+separate documents for ease in handling. Appendixes shall be lettered
+alphabetically (A, B, etc.).
