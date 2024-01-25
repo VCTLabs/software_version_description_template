@@ -1,15 +1,15 @@
 # document build target (see corresponding .rst source file)
-SUM = EU_SUM.pdf
+SVD = EU_SVD.pdf
 
 # just one pdf doc target for now
-DOCS = $(SUM)
+DOCS = $(SVD)
 
 # figure generation engine; can use other layouts/drivers
 DOT = dot
 
 # input files
 DOTSRC  := $(wildcard images/*.dot)
-SUMSRC = EU_SUM.rst
+SVDSRC = EU_SVD.rst
 
 #DOCTYPE = pdf
 # set this to the output image format to include in the doc target
@@ -19,12 +19,12 @@ FIGTYPE = svg
 FIGS := $(DOTSRC:.dot=.$(FIGTYPE))
 
 # input files for DOC target
-SOURCES_MK	:= $(SUMSRC) $(FIGS)
+SOURCES_MK	:= $(SVDSRC) $(FIGS)
 # stuff to clean
 GENFILES	:= $(FIGS)
 
 DOTFLAGS = -T$(FIGTYPE)
-RSTFLAGS = -s styles/sum.yaml
+RSTFLAGS = -s styles/svd.yaml
 DOT_OFLAG = -o
 PDF_OFLAG = -o
 
@@ -37,7 +37,7 @@ images/%.$(FIGTYPE) : images/%.dot
 	$(DOT) $< $(DOT_OFLAG) $@ $(DOTFLAGS)
 
 # build the pdf output
-$(SUM) : $(SUMSRC)
+$(SVD) : $(SVDSRC)
 	rst2pdf $< $(RSTFLAGS) $(PDF_OFLAG) $@
 
 all : $(DOCS)
