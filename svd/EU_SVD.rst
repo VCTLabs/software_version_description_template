@@ -1,3 +1,5 @@
+.. create pdf with "rst2pdf EU_SVD.rst -s styles/svd.yaml,styles/cui.yaml --use-floating-images -o EU_SVD.pdf"
+
 .. class:: title-logobox
 
 .. list-table::
@@ -50,6 +52,8 @@ Version 0.1
 |
 |
 
+.. role:: redtext
+
 .. class:: title-deepbox
 
 .. list-table::
@@ -57,8 +61,11 @@ Version 0.1
 
    * - .. class:: title-notice
 
-       THIS DOCUMENT CONTAINS PROPRIETARY AND CONFIDENTIAL INFORMATION INTENDED ONLY FOR LIMITED DISTRIBUTION WITHIN ACME SYSTEMS AND ITS DESIGNEES. IT SHALL NOT BE REPRODUCED OR TRANSFERRED TO OTHER DOCUMENTS OR DISCLOSED TO OTHERS OR USED FOR ANY PURPOSE OTHER THAN THAT FOR WHICH IT WAS OBTAINED WITHOUT THE EXPRESSED WRITTEN CONSENT OF ACME SYSTEMS.
+        :redtext:`Example Template Text Only`
 
+        Distribution Statement A: Approved for public release. Distribution is unlimited.
+
+        Controlled by: Department of Good Works, Security and Inspection Division, 800-NOT-REAL.
 
 .. contents:: Table of Contents
 
@@ -83,6 +90,10 @@ Document revision history.
      - SLA
      - 2024-01-24
      - Initial draft shell
+   * - 0.2
+     - SLA
+     - 2024-06-15
+     - Add example CUI marks and distribution statement
 
 
 .. raw:: pdf
@@ -96,7 +107,7 @@ Document revision history.
 
 
 1.1 - Identification
-~~~~~~~~~~~~~~~~~~~~
+####################
 
 This document is the Draft Software Version Description (see revision table)
 for the End-user Management Component of the Advanced ACME Web Services Appliance,
@@ -104,7 +115,7 @@ Engineering Evaluation Unit.
 
 
 1.2 - System Overview
-~~~~~~~~~~~~~~~~~~~~~
+#####################
 
 The Advanced ACME Web Services Appliance is an on-premise virtual Web Services
 cluster with an advanced management interface.  This document provides both the
@@ -121,7 +132,7 @@ analytics from Spark.
 
 
 1.3 - Document Overview
-~~~~~~~~~~~~~~~~~~~~~~~
+#######################
 
 
 2.0 Referenced documents
@@ -135,34 +146,34 @@ analytics from Spark.
 
 
 3.1 Inventory of materials released
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+###################################
 
 
 
 3.2 Inventory of software contents
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##################################
 
 
 3.3 Changes installed
-~~~~~~~~~~~~~~~~~~~~~~~~
+########################
 
 
 3.4 Adaptation data
-~~~~~~~~~~~~~~~~~~~
+###################
 
 
 3.5 Related documents
-~~~~~~~~~~~~~~~~~~~~~
+#####################
 
 
 
 3.6 Installation instructions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#############################
 
 
 
 3.7 Possible problems and known errors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+######################################
 
 
 
@@ -175,8 +186,60 @@ shall include an alphabetical listing of all acronyms, abbreviations, and their
 meanings as used in this document and a list of any terms and definitions needed
 to understand this document.
 
-A. Appendixes
-=============
+4.1 Acronyms and abbreviations
+##############################
+
+The following may be used in this document to describe specific technologies
+or engineering processes.
+
+:AES: Advanced Encryption Standard - algorithm for symmetric key encryption/decryption
+:BIF: Boot Image Format
+:CI/CD: Continuous Integration/Continuous Deployment
+:CONOPS: Concept of Operations
+:COTS: Commercial-Off-The-Shelf
+:CSCI: Computer Software Configuration Item
+:DT&E: Developmental Test and Evaluation
+:FPGA: Field-programmable gate array
+:FSBL: First-stage boot loader
+:FW: Firmware
+:HMAC: Hashed Message Authentication Code - algorithm for private key authentication
+:HW: Hardware
+:ID: Project-unique identifier
+:IRS: Interface Requirements Specification
+:ICD: Interface Control Document (should reference IRS docs)
+:JTAG: Joint Test Action Group debugging interface
+:KPP: Key Performance Parameter
+:KSA: Key System Attribute
+:LRU: Line-Replaceable Unit
+:MOE: Measure of Effectiveness
+:MOP: Measure of Performance
+:MS: Milestone
+:NVM: Nonvolatile Memory
+:O&M: Operations and Maintenance
+:OCM: On-chip memory
+:OT&E: Operational Test and Evaluation
+:PL: Programmable Logic - FPGA plus FW
+:POR: Power On / Reset
+:PS: Processing System - ARMv7 Linux runtime
+:PR: Pull Request (agile code review/quality check workflow step)
+:R&R: Remove and Replace
+:RAM: Reliability, Availability, and Maintainability (aka RMA)
+:RC: Release Candidate (SW and FW)
+:SS/SRS: System/Subsystem/Software Requirements Specifications
+:SS/SDD: System/Subsystem/Software Design Descriptions
+:SDP: Software Development Plan
+:STP: Software Test Plan
+:STD: Software Test Description
+:STR: Software Test Report
+:SUT: System Under Test
+:SW: Software
+:T&E: Test and Evaluation
+:TDP: Technical Data Package
+:VMP: Vulnerability Management Process
+
+
+Appendixes
+==========
 
 Appendixes may be used to provide information published separately for
 convenience in document maintenance (e.g., charts, classified data). As
@@ -184,3 +247,16 @@ applicable, each appendix shall be referenced in the main body of the document
 where the data would normally have been provided. Appendixes may be bound as
 separate documents for ease in handling. Appendixes shall be lettered
 alphabetically (A, B, etc.).
+
+
+Appendix A. Non-production image SW versions
+============================================
+
+.. The header format below must match the existing data format,
+   eg, delimiter is a single space
+
+.. csv-table:: Production image installed packages
+   :header: "Package name" "Package arch" "Version"
+   :header-rows: 0
+   :delim: space
+   :file: data/lxde-dev-image-raspberrypi3-64.manifest

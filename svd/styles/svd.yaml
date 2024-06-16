@@ -3,6 +3,14 @@
 pageSetup: {margin-top: 1cm, size: Letter}
 
 styles:
+  bluetext:
+    parent: bodytext
+    textColor: blue
+  redtext:
+    parent: bodytext
+    fontName: fontSerifBold
+    textColor: red
+
   heading1:
     fontSize: 200%
     parent: heading

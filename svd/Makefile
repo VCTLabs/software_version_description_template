@@ -24,7 +24,7 @@ SOURCES_MK	:= $(SVDSRC) $(FIGS)
 GENFILES	:= $(FIGS)
 
 DOTFLAGS = -T$(FIGTYPE)
-RSTFLAGS = -s styles/svd.yaml
+RSTFLAGS = -s styles/svd.yaml,styles/cui.yaml --use-floating-images
 DOT_OFLAG = -o
 PDF_OFLAG = -o
 
