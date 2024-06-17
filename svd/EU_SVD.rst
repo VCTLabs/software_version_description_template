@@ -155,7 +155,7 @@ analytics from Spark.
 
 The (yocto) build manifests provide per-image listings of the installed
 software packages; see `Appendix A. Non-production image SW versions`_ for
-the listing of non-production image SW versions.
+the current development image listing.
 
 
 3.3 Changes installed
