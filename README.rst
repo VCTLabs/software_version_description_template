@@ -15,11 +15,14 @@ This is both a GitHub Template repository *and* a usable template for a
 DID-compliant Software Version Description in reStructuredText_. This repo contains
 the following items:
 
-* A Data Item Descripttion for a Software Version Description (SVD) (in ASCII
-  text format)
+* A Data Item Descripttion for a Software Version Description (SVD)
+  in ASCII text format
 * A DID-compliant SVD outline using all the required DID sections (in
   reStructuredText format)
-* A sample title-page logo and system diagram
+* Sample document styles for rst2pdf_
+* Sample title-page, logo, and system diagram
+* Sample version table using OpenEmbedded SW manifest
+* Sample ChangeLog data generated via gitchangelog_
 * Python source for the system diagram
 * A tox file and Makefiles (to build things from source)
 
@@ -59,6 +62,7 @@ Contents after a fresh clone::
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
 .. _diagrams: https://github.com/VCTLabs/diagrams
 .. _affinity: https://github.com/VCTLabs/affinity
+.. _gitchangelog: https://sarnold.github.io/gitchangelog/
 
 
 Software Stack and Tool Dependencies
@@ -66,7 +70,7 @@ Software Stack and Tool Dependencies
 
 Install the following with your system package manager to run the workflows:
 
-* Python_ - at least version 3.6
+* Python_ - at least version 3.8
 * Tox_ - at least version 4.2
 * Graphviz_ - any recent version should work
 * make and bash - any recent versions should be fine
@@ -110,6 +114,7 @@ environment descriptions::
   do             -> Run cmd following "--" from the sync env, e.g. "tox -e do -- repolite --show"
   graph          -> Build new content for the diagrams package (run sync first to install the source)
   gen            -> Generate a new diagram from your python source file
+  changes        -> Generate full or partial changelog; use git delta syntax for changes-since
 
 
 To build the SVD document, run the following 3 workflow commands in the order
@@ -120,11 +125,32 @@ shown::
                   # then move the output .png file to SVD/images/ folder
   $ tox -e build  # install rst2pdf and build the PDF document from .rst source and .svg/.png images
 
+For extended sessions, use the virtual environment created by the build
+command above for document work::
+
+  $ source .tox/build/bin/activate
+  (build) $ $EDITOR svd/EU_SVD.rst        # make content changes
+  (build) $ $EDITOR svd/styles/*.style    # make style changes
+  (build) $ $EDITOR svd/Makefile          # change rst2pdf args or other build options
+  (build) $ make                          # (re)build PDF document
+  (build) $ make clean                    # force a new build, eg, after style changes
+  (build) $ evince svd/EU_SVD.pdf         # view rendered document
+  (build) $ deactivate                    # to exit the virtual environment
+
+Similarly, use the virtual environment created by the ``gen`` command for
+diagram work::
+
+  $ source .graph/bin/activate
+  (.graph) $ $EDITOR resources/acme_webservice.py  # make content changes
+  (.graph) $ python resources/acme_webservice.py   # rebuild the diagram
+  (.graph) $ deactivate                            # to exit the virtual environment
+
+
 Points to note:
 
 * you only need to ``sync`` once (after a fresh checkout)
-* you only to run ``gen`` if the python source file is changed
-* run the ``build`` command any time to view a fresh PDF
+* you only need to run ``gen`` if the python source file is changed
+* run ``tox -e clean,build`` any time to view a fresh PDF
 
 In addition to the ``gen`` command, the default makefiles will also build diagrams
 from ``.dot`` code if you drop a (graphviz) dot file in the ``SVD/images/`` folder

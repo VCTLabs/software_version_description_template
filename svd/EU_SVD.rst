@@ -153,9 +153,27 @@ analytics from Spark.
 3.2 Inventory of software contents
 ##################################
 
+The (yocto) build manifests provide per-image listings of the installed
+software packages; see `Appendix A. Non-production image SW versions`_ for
+the listing of non-production image SW versions.
+
 
 3.3 Changes installed
 ########################
+
+ChangeLog documents for each CSCI are generated as-needed from the git
+repository history for a given configuration item using the gitchangelog_
+tool. See the following sections in `Appendix B. SW Changelog data`_
+for the relevant change listings.
+
+Both Github PR/merges and Issue/bug status for each CSCI are extracted
+and summarized from the log history using the ``.gitchangelog.rc`` file
+in each repository
+
+.. _gitchangelog: https://sarnold.github.io/gitchangelog/
+
+* `Meta lxde`_
+* `SVD template repo`_
 
 
 3.4 Adaptation data
@@ -238,17 +256,6 @@ or engineering processes.
 :VMP: Vulnerability Management Process
 
 
-Appendixes
-==========
-
-Appendixes may be used to provide information published separately for
-convenience in document maintenance (e.g., charts, classified data). As
-applicable, each appendix shall be referenced in the main body of the document
-where the data would normally have been provided. Appendixes may be bound as
-separate documents for ease in handling. Appendixes shall be lettered
-alphabetically (A, B, etc.).
-
-
 Appendix A. Non-production image SW versions
 ============================================
 
@@ -260,3 +267,37 @@ Appendix A. Non-production image SW versions
    :header-rows: 0
    :delim: space
    :file: data/lxde-dev-image-raspberrypi3-64.manifest
+
+
+Appendix B. SW Changelog data
+=============================
+
+The changelog data integrated here was generated directly from the git log
+history via gitchangelog_, however, some of the output may have been modified
+to fix any overall document rendering errors. The same command was run in each
+repository prior to generating the complete document::
+
+  $ gitchangelog > CHANGELOG.rst
+
+.. note:: The following section titles are the repository names for each
+          CSCI without the dashes, e.g., **Meta lxde** maps to the meta-lxde
+          repository, and so on.
+
+Only the initial release requires full changelog data; subsequent releases
+of the same CSCI(s) should only include change data **since the last release**.
+
+
+Meta lxde
+#########
+
+Openembedded build metadata and workflow changes since v0.0.0
+
+.. include:: data/meta-lxde-CHANGELOG.rst
+
+
+SVD template repo
+#################
+
+software_version_description_template and workflow changes since v0.0.0
+
+.. include:: data/svd-repo-CHANGELOG.rst
