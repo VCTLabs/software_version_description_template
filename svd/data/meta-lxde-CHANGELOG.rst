@@ -441,5 +441,3 @@
 - Openbox: don't depend on gtk-engines. [Peter Tworek]
 - New layer: meta-lxde. Most stuff is imported from classic oe. [Peter
   Tworek]
-
-

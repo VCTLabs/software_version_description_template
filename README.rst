@@ -60,6 +60,7 @@ Contents after a fresh clone::
 
 
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
+.. _rst2pdf: https://rst2pdf.org/
 .. _diagrams: https://github.com/VCTLabs/diagrams
 .. _affinity: https://github.com/VCTLabs/affinity
 .. _gitchangelog: https://sarnold.github.io/gitchangelog/

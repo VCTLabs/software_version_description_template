@@ -15,5 +15,3 @@ Other
 - Svd/EU_SVD.rst: install pre-commit and cleanup long lines. [Steve
   Arnold]
 - Add initial SVD DID and outline. [Steve Arnold]
-
-
